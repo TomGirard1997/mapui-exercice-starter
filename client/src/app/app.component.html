@@ -8,14 +8,14 @@
   />
   <span>Exercice technique Tom Girard</span>
     <div class="spacer"></div>
-    <a routerLink="/list/patients" id="list-pat" mat-raised-button>Listes des Patients</a>
-    <a routerLink="/list/medecins" id="list-medic" mat-raised-button>Listes des Médecins</a>
-
+    <a routerLink="patient-list" id="list-pat" mat-raised-button>Listes des Patients</a>
+    <a routerLink="medic-list" id="list-medic" mat-raised-button>Listes des Médecins</a>
   </nav>
 
 <div class="content" role="main">
 
- 
+  <router-outlet></router-outlet>
+
   <!-- Footer -->
 
   <svg id="clouds" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677" viewBox="0 0 2611.084 485.677">
@@ -25,4 +25,3 @@
 
 </div>
 
-<router-outlet></router-outlet>

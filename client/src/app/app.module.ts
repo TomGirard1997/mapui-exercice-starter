@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MedicListComponent } from './medic-list/medic-list.component';
 import { PatientListComponent } from './patient-list/patient-list.component';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -15,8 +17,10 @@ import { PatientListComponent } from './patient-list/patient-list.component';
         PatientListComponent,
     ],
     imports: [
-        BrowserModule, 
-        AppRoutingModule, 
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        RouterModule, 
         
         BrowserAnimationsModule,
 
