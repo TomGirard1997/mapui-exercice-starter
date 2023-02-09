@@ -1,4 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.user-pic {
+    border-radius: 50% !important;
+    border: 2px solid #1976d2;
+}
+
+.container-list {
+    flex: auto;
+    margin: 6vh auto;
+    width: 80vw;
+    height: 80vh;
+    border: 3px solid #1976d2;
+    border-radius: 1vh;
+}
+
+.container-details {
+    flex: auto;
+    margin: 2vh auto;
+    width: 80vw;
+    height: 80vh;
+    border: 3px solid #1976d2;
+    border-radius: 1vh;
+}
+
+.transparent {
+    background:#7f7f7f;
+    background:rgba(188,188,188,0.5);
+}
