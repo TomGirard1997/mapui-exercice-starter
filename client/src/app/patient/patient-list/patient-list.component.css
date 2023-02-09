@@ -1,0 +1,8 @@
+.example-card {
+    margin: 1vh 1vw;
+    cursor: pointer;
+}
+
+.example-viewport {
+    height: 75vh;
+}

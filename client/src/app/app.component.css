@@ -42,17 +42,15 @@
   }
 
   .toolbar #list-pat {
-    height: 30px;
     margin: 0 8px;
   }
 
-  .toolbar #list-medic {
-    height: 30px;
+  .toolbar #list-doctors {
     margin: 0 16px;
   }
 
   .toolbar #list-pat:hover,
-  .toolbar #list-medic:hover {
+  .toolbar #list-doctors:hover {
     opacity: 0.8;
   }
 
