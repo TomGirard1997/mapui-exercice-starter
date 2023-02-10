@@ -5,3 +5,7 @@
 .example-viewport {
   height: 75vh;
 }
+
+.container-doctor {
+  margin-top: 6vh !important;
+}

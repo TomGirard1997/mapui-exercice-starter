@@ -26,7 +26,6 @@ export class DoctorsListComponent implements OnInit {
         var rndInt = Math.floor(Math.random() * 50)
         this.pictures.push("https://randomuser.me/api/portraits/men/"+rndInt+".jpg");
       }
-      console.log(this.pictures)
     });
   }
 }

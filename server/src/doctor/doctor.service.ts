@@ -12,4 +12,8 @@ export class DoctorService {
   async getAll():Promise<Doctor[]>{
     return await this.doctorModel.find().exec();
   }
+
+  async getByid(id: string) {
+    return await this.doctorModel.findById(id).exec();
+  }
 }

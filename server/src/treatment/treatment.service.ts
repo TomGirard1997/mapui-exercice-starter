@@ -12,4 +12,9 @@ export class TreatmentService {
   async getAll():Promise<Treatment[]>{
     return await this.treatmentModel.find().exec();
   }
+
+  async getAllByDoctorId(doctorId:string):Promise<Treatment[]>{
+    return await this.treatmentModel.find({ doctor: { _id : doctorId} }).exec()
+  }
 }
+

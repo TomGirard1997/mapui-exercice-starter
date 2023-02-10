@@ -12,4 +12,10 @@ export class TreatmentService {
   get(){
     return this.http.get<Treatment[]>("http://localhost:3000/treatment")
   }
+
+  getAllByDoctorId(doctorId: string) {
+    return this.http.get<Treatment[]>(
+     `http://localhost:3000/treatment/doctorId/${doctorId}`
+    );
+   }
 }

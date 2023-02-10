@@ -19,7 +19,7 @@ export class Treatment {
     code:string;
 
     @Prop()
-    doctor:Doctor
+    doctor:Doctor;
 }
  
 export const TreatmentSchema = SchemaFactory.createForClass(Treatment);
