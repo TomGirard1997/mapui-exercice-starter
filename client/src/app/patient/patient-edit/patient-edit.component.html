@@ -1,0 +1,48 @@
+<div class="container-list transparent w-full text-center px-8 py-12">
+    <legend class="mb-12">Modification Fiche Patient</legend>
+    <form class="col">
+        <div class="mb-3">
+            <label for="txtFirstName" class="form-label">Prénom</label>
+            <input
+              type="text"
+              name="name"
+              [(ngModel)]="patient.firstName"
+              class="form-control w-50 m-auto"
+              id="txtFirstName"
+            />
+        </div>
+        <div class="mb-3">
+          <label for="txtLastName" class="form-label">Nom</label>
+          <input
+            type="text"
+            name="txtLastName"
+            [(ngModel)]="patient.lastName"
+            class="form-control w-50 m-auto"
+            id="txtLastName"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="nbrAge" class="form-label">Age</label>
+          <input
+            type="number"
+            name="nbrAge"
+            [(ngModel)]="patient.age"
+            class="form-control w-50 m-auto"
+            id="nbrAge"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="txtGender" class="form-label">Genre</label>
+          <input
+            type="text"
+            name="txtGender"
+            [(ngModel)]="patient.gender"
+            class="form-control w-50 m-auto"
+            id="txtGender"
+          />
+        </div>
+        <button type="button" (click)="update()" class="btn btn-primary mt-6">
+          Mettre à jour
+        </button>
+    </form>
+  </div>

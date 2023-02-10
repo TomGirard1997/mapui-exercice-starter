@@ -1,7 +1,9 @@
-import { Component, Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import { Component, Injectable, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http'
 import { PatientService } from '../patient.service';
 import { Patient } from '../patient';
+
+declare var window: any;
 
 @Component({
   selector: 'app-patient-list',
@@ -10,13 +12,19 @@ import { Patient } from '../patient';
 })
 
 @Injectable()
-export class PatientListComponent {
+export class PatientListComponent implements OnInit {
   constructor(private patientService: PatientService, private http:HttpClient) { }
 
   patients: Patient[] = []
   pictures: String[] = []
 
+  patientIdToDelete: string = '';
+  deleteModal: any;
+
   ngOnInit(): void {
+    this.deleteModal = new window.bootstrap.Modal(
+      document.getElementById('deleteModal')
+    );
     this.getAll()
   }
 
@@ -27,6 +35,18 @@ export class PatientListComponent {
         var rndInt = Math.floor(Math.random() * 50)
         this.pictures.push("https://randomuser.me/api/portraits/men/"+rndInt+".jpg");
       }
+    });
+  }
+
+  openDeleteModal(id: string) {
+    this.patientIdToDelete = id;
+    this.deleteModal.show();
+  }
+ 
+  delete() {
+    this.patientService.delete(this.patientIdToDelete).subscribe(() => {
+      this.patients = this.patients.filter((_) => _._id !== this.patientIdToDelete);
+      this.deleteModal.hide();
     });
   }
 }

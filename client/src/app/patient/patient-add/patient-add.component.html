@@ -1,0 +1,48 @@
+<div class="container mt-2">
+    <legend>Create Item</legend>
+    <form>
+      <div class="mb-3">
+        <label for="txtFirstName" class="form-label">FirstName</label>
+        <input
+          type="text"
+          name="name"
+          [(ngModel)]="patient.firstName"
+          class="form-control"
+          id="txtFirstName"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="txtLastName" class="form-label">LastName</label>
+        <input
+          type="text"
+          name="txtLastName"
+          [(ngModel)]="patient.lastName"
+          class="form-control"
+          id="txtLastName"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="nbrAge" class="form-label">Age</label>
+        <input
+          type="number"
+          name="nbrAge"
+          [(ngModel)]="patient.age"
+          class="form-control"
+          id="nbrAge"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="txtGender" class="form-label">Gender</label>
+        <input
+          type="text"
+          name="txtGender"
+          [(ngModel)]="patient.gender"
+          class="form-control"
+          id="txtGender"
+        />
+      </div>
+      <button type="button" (click)="create()" class="btn btn-primary">
+        Create
+      </button>
+    </form>
+  </div>

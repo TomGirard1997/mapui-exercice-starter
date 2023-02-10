@@ -12,4 +12,24 @@ export class PatientService {
   async getAll():Promise<Patient[]>{
     return await this.patientModel.find().exec();
   }
+
+  async getByid(id: string) {
+    return await this.patientModel.findById(id).exec();
+  }
+
+  async create(patient: Patient) {
+    const newPatient = new this.patientModel(patient);
+    return await newPatient.save();
+  }
+
+  async update(id: string, patient: Patient) {
+    return await this.patientModel.findByIdAndUpdate(id, patient, {
+      new: true,
+    });
+  }
+
+  async delete(id: string) {
+    await this.patientModel.findByIdAndRemove(id);
+  }
+
 }
