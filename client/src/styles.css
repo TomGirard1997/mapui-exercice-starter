@@ -13,9 +13,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .container-list {
     flex: auto;
-    margin: 2vh auto;
+    margin: 1vh auto;
     width: 80vw;
-    height: 80vh;
+    height: 75vh;
     border: 3px solid #1976d2;
     border-radius: 1vh;
 }

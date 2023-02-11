@@ -7,8 +7,12 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppComponent } from './app.component';
 
@@ -17,13 +21,14 @@ import { PatientListComponent } from './patient/patient-list/patient-list.compon
 import { DoctorDetailsComponent } from './doctor/doctor-details/doctor-details.component';
 import { PatientAddComponent } from './patient/patient-add/patient-add.component';
 import { PatientEditComponent } from './patient/patient-edit/patient-edit.component';
+import { PatientDetailsComponent } from './patient/patient-details/patient-details.component';
 
 
 @NgModule({
     declarations: [
         AppComponent, 
         DoctorsListComponent, 
-        PatientListComponent, DoctorDetailsComponent, PatientAddComponent, PatientEditComponent,
+        PatientListComponent, DoctorDetailsComponent, PatientAddComponent, PatientEditComponent, PatientDetailsComponent,
     ],
     imports: [
         BrowserModule,
@@ -33,7 +38,11 @@ import { PatientEditComponent } from './patient/patient-edit/patient-edit.compon
         ScrollingModule,
         BrowserAnimationsModule,
         FormsModule,
-
+        MatIconModule,
+      
+        MatSelectModule,
+        MatFormFieldModule,
+        MatInputModule,
         MatButtonModule,
         MatCardModule
     ],

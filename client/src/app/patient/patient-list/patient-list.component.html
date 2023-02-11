@@ -1,6 +1,7 @@
 <div>
-  <a class="btn btn-primary mt-3" routerLink="/patient-add">Créer une fiche Patient</a>
-
+  <div class="row">
+    <h1 class="col text-center text-bold my-2">Listes des Patients</h1>
+  </div>
   <div class="container-list transparent">
     <cdk-virtual-scroll-viewport appendOnly itemSize="" class="example-viewport my-3 mx-2">
         <div *cdkVirtualFor="let patient of patients; let index = index;">
@@ -26,6 +27,9 @@
         </div>
     </cdk-virtual-scroll-viewport>
   </div>
+  <div class="row">
+    <a class="btn btn-primary mt-2 mx-auto w-50" routerLink="/patient-add">Créer une fiche Patient</a>
+  </div>
 </div>
 
 <!-- Modal-->
@@ -34,7 +38,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Warning!</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Supression Patient</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">

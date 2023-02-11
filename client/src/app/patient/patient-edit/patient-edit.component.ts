@@ -22,6 +22,10 @@ export class PatientEditComponent {
     age: 0,
     gender: '',
   };
+  genders: string[]= [
+    'Homme',
+    'Femme'
+  ]
  
   ngOnInit(): void {
     this.route.paramMap.subscribe((param) => {

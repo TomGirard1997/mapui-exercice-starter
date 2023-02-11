@@ -16,4 +16,8 @@ export class DoctorService {
   async getByid(id: string) {
     return await this.doctorModel.findById(id).exec();
   }
+
+  async getMultipleById(ids: string) {
+    return await this.doctorModel.find({"_id" : {"$in" : ids}});
+  }
 }

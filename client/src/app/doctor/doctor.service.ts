@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import {HttpClient, HttpParams} from '@angular/common/http'
 import { Doctor } from './doctor';
 
 @Injectable({
@@ -15,7 +15,15 @@ export class DoctorService {
 
   getById(id: string) {
     return this.http.get<Doctor>(
-     `http://localhost:3000/doctor/${id}`
+     `http://localhost:3000/doctor/id/${id}`
     );
-   }
+  }
+
+  getMultipleById(ids: string[]) {
+    let params = new HttpParams();
+    ids.forEach(id => {
+      params = params.append('id', id);
+    });
+    return this.http.get<Doctor[]>(`http://localhost:3000/doctor/multiple`, {params});
+  }
 }

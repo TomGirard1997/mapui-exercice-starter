@@ -1,48 +1,33 @@
-<div class="container-list transparent w-full text-center px-8 py-12">
+<div>
+  <div class="row mt-2 w-25">
+    <a routerLink="/" class="col text-sm justify-center" id="list-doctors" mat-button><mat-icon>keyboard_arrow_left</mat-icon>{{"Revenir à la liste des Patients"}}</a>
+  </div>
+  <div class="container-list transparent w-full text-center px-8 py-12">
     <legend class="mb-12">Modification Fiche Patient</legend>
-    <form class="col">
-        <div class="mb-3">
-            <label for="txtFirstName" class="form-label">Prénom</label>
-            <input
-              type="text"
-              name="name"
-              [(ngModel)]="patient.firstName"
-              class="form-control w-50 m-auto"
-              id="txtFirstName"
-            />
-        </div>
-        <div class="mb-3">
-          <label for="txtLastName" class="form-label">Nom</label>
-          <input
-            type="text"
-            name="txtLastName"
-            [(ngModel)]="patient.lastName"
-            class="form-control w-50 m-auto"
-            id="txtLastName"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="nbrAge" class="form-label">Age</label>
-          <input
-            type="number"
-            name="nbrAge"
-            [(ngModel)]="patient.age"
-            class="form-control w-50 m-auto"
-            id="nbrAge"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="txtGender" class="form-label">Genre</label>
-          <input
-            type="text"
-            name="txtGender"
-            [(ngModel)]="patient.gender"
-            class="form-control w-50 m-auto"
-            id="txtGender"
-          />
-        </div>
-        <button type="button" (click)="update()" class="btn btn-primary mt-6">
-          Mettre à jour
-        </button>
+    <form class="col col-md-3 m-auto" (ngSubmit)="update()">
+      <mat-form-field appearance="fill">
+        <mat-label>Prénom</mat-label>
+        <input required name="firstName" [(ngModel)]="patient.firstName" matInput>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Nom</mat-label>
+        <input required name="lastName" [(ngModel)]="patient.lastName" matInput>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Age</mat-label>
+        <input required type="number" name="age" [(ngModel)]="patient.age" matInput>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Genre</mat-label>
+        <mat-select required name="genre" [(ngModel)]="patient.gender">
+          <mat-option *ngFor="let gender of genders" [value]="gender">
+            {{gender}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button type="submit" class="btn btn-primary mt-6">
+        Mettre à jour
+      </button>
     </form>
   </div>
+</div>

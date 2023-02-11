@@ -31,9 +31,10 @@ export class PatientListComponent implements OnInit {
   getAll() {
     this.patientService.get().subscribe((data) => {
       this.patients = data;
-      for (var patient in this.patients) {
+      for (var patient of this.patients) {
         var rndInt = Math.floor(Math.random() * 50)
-        this.pictures.push("https://randomuser.me/api/portraits/men/"+rndInt+".jpg");
+        var gender = patient.gender === 'Homme' ? 'men' : 'women' 
+        this.pictures.push("https://randomuser.me/api/portraits/"+gender+"/"+rndInt+".jpg");
       }
     });
   }

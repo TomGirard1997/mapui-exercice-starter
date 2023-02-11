@@ -6,5 +6,5 @@ export interface Patient {
     lastName: string;
     age: number;
     gender: string;
-    treatments: Treatment[]  
+    treatments: string[]  
 }

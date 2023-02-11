@@ -13,7 +13,12 @@ export class PatientAddComponent {
     private patientService: PatientService,
     private router: Router
   ) {}
- 
+  
+  genders: string[]= [
+    'Homme',
+    'Femme'
+  ]
+
   patient: CreateOrUpdatePatient = {
     firstName: '',
     lastName: '',

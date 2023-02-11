@@ -1,13 +1,13 @@
 <div>
     <div class="row mt-2 w-25">
-        <a routerLink="/doctors-list" class="col text-sm justify-center" id="list-doctors" mat-button><mat-icon>keyboard_arrow_left</mat-icon>{{"Revenir à la liste des Médecins"}}</a>
+      <a routerLink="/" class="col text-sm justify-center" id="list-doctors" mat-button><mat-icon>keyboard_arrow_left</mat-icon>{{"Revenir à la liste des Patients"}}</a>
     </div>
     <div class="container-details transparent">
         <mat-card class="example-card">
             <mat-card-header>
               <mat-card-title-group>
-                <mat-card-title>{{doctor.lastName+" "+doctor.firstName}}</mat-card-title>
-                <mat-card-subtitle>{{doctor.speciality}}</mat-card-subtitle>
+                <mat-card-title>{{patient.lastName+" "+patient.firstName}}</mat-card-title>
+                <mat-card-subtitle>{{patient.age+" ans"}}</mat-card-subtitle>
                 <img mat-card-md-image class="user-pic" src="https://randomuser.me/api/portraits/men/66.jpg"  alt="Image of a Shiba Inu">
               </mat-card-title-group>
             </mat-card-header>
@@ -18,9 +18,8 @@
                   </mat-card-content>
                 </div>
                 <mat-card-title>{{"Listes des traitements"}}</mat-card-title>
-
-                <!-- <cdk-virtual-scroll-viewport appendOnly itemSize="" class="example-viewport my-3 mx-2">
-                    <div *cdkVirtualFor="let treatment of doctorTreatments;">
+                 <cdk-virtual-scroll-viewport appendOnly itemSize="" class="example-viewport my-3 mx-2">
+                    <div *cdkVirtualFor="let treatment of patientTreatments;">
                       <mat-card class="example-card">
                           <mat-card-header>
                             <mat-card-title-group>
@@ -30,7 +29,7 @@
                           </mat-card-header>
                       </mat-card>
                     </div>
-                </cdk-virtual-scroll-viewport> -->
+                </cdk-virtual-scroll-viewport>
             </mat-card-content>
         </mat-card> 
     </div>

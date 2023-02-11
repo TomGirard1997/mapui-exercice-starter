@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Logger, Param, Query } from '@nestjs/common';
 import { TreatmentService } from './treatment.service';
 
 @Controller('treatment')
@@ -11,8 +11,13 @@ export class TreatmentController {
         return await this.treatmentService.getAll();
     }
 
-    @Get("/doctorId/:doctorId")
-    async getAllByDoctorId(@Param('doctor') doctorId:string){
-        return await this.treatmentService.getAllByDoctorId(doctorId);
+    @Get("/multiple")
+    async getMultipleById(@Query('id') ids:string) {
+        return await this.treatmentService.getMultipleById(ids)
+    }
+
+    @Get("/id/:id")
+    async getById(@Param('id') id:string){
+        return await this.treatmentService.getById(id);
     }
 }

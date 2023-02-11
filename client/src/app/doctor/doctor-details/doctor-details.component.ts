@@ -11,7 +11,7 @@ import { DoctorService } from '../doctor.service';
 })
 
 export class DoctorDetailsComponent implements OnInit {
-  constructor(private route:ActivatedRoute, private router:Router, private treatmentService: TreatmentService) {}
+  constructor(private route:ActivatedRoute, private router:Router, private doctorService:DoctorService, private treatmentService:TreatmentService) {}
 
   public doctorId:string=""
   public doctor:Doctor={
@@ -24,8 +24,8 @@ export class DoctorDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(param => {
       this.doctorId = param['id'];
-      this.treatmentService.getAllByDoctorId(this.doctorId).subscribe((data) => {
-        
+      this.doctorService.getById(this.doctorId).subscribe((data) => {
+        this.doctor = data
       })
     })
   }
